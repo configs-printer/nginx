@@ -1,20 +1,22 @@
 
 server {
 
-	root /home/www/dev.printer.life;
+	root /home/www/www.thiennhatphuong.com;
 	index index.html index.htm;
 
-	server_name dev.printer.life;
+	server_name thiennhatphuong.com;
 
 	location / {
-		proxy_pass http://127.0.0.1:8080;    
+	proxy_pass http://127.0.0.1:4003;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
 	}
-    access_log /home/www/shared/log/dev.printer-access.log;
-    error_log /home/www/shared/log/dev.printer-error.log;
+
+    access_log /home/www/shared/log/www.thiennhatphuong-access.log;
+    error_log /home/www/shared/log/www.thiennhatphuong-error.log;
+
     error_page 404 /404.html;
 }
